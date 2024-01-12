@@ -1,0 +1,20 @@
+[package]
+name = "eh-personnality"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+libc = { version = "0.2.152", default-features = false }
+libc-print = "0.1.22"
+libc_alloc = "1.0.6"
+
+bytes = { version = "1.5.0", default-features = false }
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+# lto = "thin"
+panic = "abort"
+opt-level = "s"
+strip = true
